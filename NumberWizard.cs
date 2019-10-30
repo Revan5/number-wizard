@@ -54,3 +54,10 @@ public class NumberWizard : MonoBehaviour
         }
 
     }
+    
+       void NextGuess()
+    {
+        guess = (max + min) / 2;
+        Debug.Log("Is your guess higher or lower than ..." + guess);
+    }
+}
