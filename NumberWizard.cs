@@ -29,3 +29,28 @@ public class NumberWizard : MonoBehaviour
         Debug.Log("Press Up = Higher , Press Down = Lower , Press Enter = Correct");
         max = max + 1;
     }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Detect when the up arrow key is pressed down
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            min = guess;
+            NextGuess();
+        }
+        //Detect when the down arrow key is pressed down
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            max = guess;
+            NextGuess();
+        }
+        //Detect when the Return key is pressed down
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("Guessed the number!");
+            StartGame();
+        }
+
+    }
